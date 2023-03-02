@@ -1,0 +1,103 @@
+# Import necessary libraries
+import openai
+from flask import Flask, request, jsonify, render_template
+from flask_bootstrap import Bootstrap
+
+# Initialize Flask app
+app = Flask(__name__)
+Bootstrap(app)
+
+# Set OpenAI API key
+openai.api_key = "YOUR_API_KEY_HERE"
+
+# Define home page route
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+    # Define chat route
+    @app.route('/chat', methods=['POST'])
+    def chat():
+        # Get message from user
+            message = request.form['message']
+
+                # Call OpenAI API to generate response
+                    response = openai.Completion.create(
+                                engine="davinci",
+                                        prompt=message,
+                                                max_tokens=60,
+                                                        n=1,
+                                                                stop=None,
+                                                                        temperature=0.5,
+                    )
+
+                        # Extract response text from API response
+                            response_text = response.choices[0].text.strip()
+
+                                # Return response to user
+                                    return jsonify({'message': response_text})
+
+                                    if __name__ == '__main__':
+                                        app.run(debug=True)
+                                                                            return jsonify({'message': response_text})
+
+                                    if __name__ == '__main__':
+                                        app.run(debug=True)
+
+                                    return jsonify({'message': response_text})
+
+                                    if __name__ == '__main__':
+                                        app.run(debug=True)
+
+                    )# Import necessary libraries
+                    import openai
+                    from flask import Flask, request, jsonify, render_template
+                    from flask_bootstrap import Bootstrap
+
+                    # Initialize Flask app
+                    app = Flask(__name__)
+                    Bootstrap(app)
+
+                    # Set OpenAI API key
+                    openai.api_key = "YOUR_API_KEY_HERE"
+
+                    # Define home page route
+                    @app.route('/')
+                    def home():
+                        return render_template('index.html')
+
+                        # Define chat route
+                        @app.route('/chat', methods=['POST'])
+                        def chat():
+                            # Get message from user
+                                message = request.form['message']
+
+                                    # Call OpenAI API to generate response
+                                        response = openai.Completion.create(
+                                                    engine="davinci",
+                                                            prompt=message,
+                                                                    max_tokens=60,
+                                                                            n=1,
+                                                                                    stop=None,
+                                                                                            temperature=0.5,
+                                        )
+
+                                            # Extract response text from API response
+                                                response_text = response.choices[0].text.strip()
+
+                                                    # Return response to user
+                                                        return jsonify({'message': response_text})
+
+                                                        if __name__ == '__main__':
+                                                            app.run(debug=True)
+                                                            '__main__':
+                                                            app.run(debug=True)
+
+                                        )
+'__main__':
+                                                            app.run(debug=True)
+
+                                        )
+                    )
+                                        )
+                    )
